@@ -3,12 +3,18 @@ package com.anton.algorithms.SelectionSort;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 public class SelectionSort {
 
     public static void main(String[] args) {
 
-        int [] array = new int[]{10, 5, 7, 9, 16, 34, 67, 9,234,324 ,56,3,6,78,245};
+        Random rnd = new Random();
+        int [] array = new int[1000];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rnd.nextInt(100000);
+        }
 
         Long currentTime =  System.currentTimeMillis();
         array = sortArray(array);

@@ -1,15 +1,22 @@
 package com.anton.algorithms.BinarySearch;
 
 
+import com.anton.algorithms.SortingAlgorithms.ArrayInit;
+
 import java.util.Arrays;
 
 public class BinarySearch {
-    public static void main(String[] args) {
-        int[] myList = {87, 93, 77, 1, 17, 123, 45, 13};
-        Arrays.sort(myList);
 
-        System.out.println(binarySearch( myList, 93));
-        System.out.println(binarySearch(myList, 16));
+    private static final Integer ARRAY_TO_SORT_LENGTH = 100;
+    private static final Integer ITEM_TO_SEARCH = 17;
+    public static void main(String[] args) {
+        ArrayInit myList = new ArrayInit(ARRAY_TO_SORT_LENGTH);
+        Arrays.sort(myList.getArray());
+
+        System.out.println(binarySearch( myList.getArray(), ITEM_TO_SEARCH));
+        System.out.println(recurrentBinarySearch(myList.getArray(), ITEM_TO_SEARCH, 0,ARRAY_TO_SORT_LENGTH-1));
+
+
     }
 
     public static int binarySearch(int[] list, int item) {
@@ -63,5 +70,27 @@ public class BinarySearch {
             return false;
         }
         return true;
+    }
+
+    public static int recurrentBinarySearch(int[] list, int item, int min, int max){
+
+        if (min + 1 == max){
+            return -1;
+        }
+
+        int mid = (min + max) / 2;
+
+        if (list[mid] == item){
+            return mid;
+        }
+        else if ( list[mid] > item ) {
+            max = mid;
+           return recurrentBinarySearch(list, item, min , max);
+        }
+        else {
+            min = mid;
+           return recurrentBinarySearch(list, item, min, max);
+        }
+
     }
 }

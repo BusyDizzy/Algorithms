@@ -1,27 +1,11 @@
-package com.anton.algorithms.SelectionSort;
+package com.anton.algorithms.SortingAlgorithms;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 
 public class SelectionSort {
 
-    public static void main(String[] args) {
-
-        Random rnd = new Random();
-        int [] array = new int[1000];
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = rnd.nextInt(100000);
-        }
-
-        Long currentTime =  System.currentTimeMillis();
-        array = sortArray(array);
-        Long timeAfterSort =  System.currentTimeMillis();
-        System.out.println(Arrays.toString(array));
-        System.out.printf("Время работы составило %d", timeAfterSort - currentTime);
-
+    public SelectionSort() {
     }
 
     public static int findSmallestElement(int[] array){
@@ -50,7 +34,7 @@ public class SelectionSort {
         return newArray;
     }
 
-    public static int[] sortArray(int [] arrayToSort){
+    public int[] sortArray(int [] arrayToSort){
         int [] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length);
         int [] arrayToReturn = new int[arrayToSort.length];
         for (int i = 0; i < arrayToSort.length; i++) {

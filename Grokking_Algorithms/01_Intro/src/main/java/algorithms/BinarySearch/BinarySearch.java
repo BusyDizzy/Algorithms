@@ -1,7 +1,7 @@
-package com.anton.algorithms.BinarySearch;
+package main.java.algorithms.BinarySearch;
 
 
-import com.anton.algorithms.SortingAlgorithms.ArrayInit;
+import main.java.algorithms.SortingAlgorithms.ArrayInitialization;
 
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ public class BinarySearch {
     private static final Integer ARRAY_TO_SORT_LENGTH = 100;
     private static final Integer ITEM_TO_SEARCH = 17;
     public static void main(String[] args) {
-        ArrayInit myList = new ArrayInit(ARRAY_TO_SORT_LENGTH);
+        ArrayInitialization myList = new ArrayInitialization(ARRAY_TO_SORT_LENGTH);
         Arrays.sort(myList.getArray());
 
         System.out.println(binarySearch( myList.getArray(), ITEM_TO_SEARCH));
@@ -19,7 +19,7 @@ public class BinarySearch {
 
     }
 
-    public static int binarySearch(int[] list, int item) {
+    public static int binarySearch(Integer[] list, int item) {
         if (isListEmpty(list)) {
             return -1;
         }
@@ -43,7 +43,7 @@ public class BinarySearch {
         return -1;
     }
 
-    public static boolean isListEmpty(int[] myList) {
+    public static boolean isListEmpty(Integer[] myList) {
         int listSize = myList.length;
         if (listSize == 0) {
             return true;
@@ -72,7 +72,7 @@ public class BinarySearch {
         return true;
     }
 
-    public static int recurrentBinarySearch(int[] list, int item, int min, int max){
+    public static int recurrentBinarySearch(Integer[] list, int item, int min, int max){
 
         if (min + 1 == max){
             return -1;
@@ -85,7 +85,7 @@ public class BinarySearch {
         }
         else if ( list[mid] > item ) {
             max = mid;
-           return recurrentBinarySearch(list, item, min , max);
+            return recurrentBinarySearch(list, item, min , max);
         }
         else {
             min = mid;

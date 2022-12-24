@@ -1,14 +1,13 @@
-package com.anton.algorithms.SortingAlgorithms;
+package main.java.algorithms.SortingAlgorithms;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class SelectionSort {
 
     public SelectionSort() {
     }
 
-    public static int findSmallestElement(int[] array){
+    public static int findSmallestElement(Integer[] array){
         int smallestElement = array[0];
         int smallestIndex = 0;
 
@@ -21,9 +20,9 @@ public class SelectionSort {
         return smallestIndex;
     }
 
-    public static int[] removeElement(int [] array, int smallestIndexElement){
+    public static Integer[] removeElement(Integer[] array, int smallestIndexElement){
 
-        int [] newArray = new int[array.length-1];
+        Integer[] newArray = new Integer[array.length-1];
 
         for (int i = 0, k=0; i < array.length; i++) {
             if (i != smallestIndexElement ){
@@ -34,9 +33,9 @@ public class SelectionSort {
         return newArray;
     }
 
-    public int[] sortArray(int [] arrayToSort){
-        int [] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length);
-        int [] arrayToReturn = new int[arrayToSort.length];
+    public Integer[] sort(Integer[] arrayToSort){
+        Integer[] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length);
+        Integer[] arrayToReturn = new Integer[arrayToSort.length];
         for (int i = 0; i < arrayToSort.length; i++) {
             int smallestElementIndex = findSmallestElement(arrayCopy);
             arrayToReturn[i] = arrayCopy[smallestElementIndex];

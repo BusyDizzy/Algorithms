@@ -1,6 +1,6 @@
-package com.anton.algorithms.SumUp;
+package main.java.algorithms.SumUp;
 
-import com.anton.algorithms.SortingAlgorithms.ArrayInit;
+import main.java.algorithms.SortingAlgorithms.ArrayInitialization;
 
 import java.util.Arrays;
 
@@ -10,7 +10,7 @@ public class SumArrayElements {
 
     public static void main(String[] args) {
 
-        ArrayInit newArrayObject = new ArrayInit(ARRAY_TO_SORT_LENGTH);
+        ArrayInitialization newArrayObject = new ArrayInitialization(ARRAY_TO_SORT_LENGTH);
 
         System.out.println(sumUp(newArrayObject.getArray()));
 
@@ -19,9 +19,9 @@ public class SumArrayElements {
     /**
      * Рекурсивная функция для подсчета элементов в списке
      */
-    public static int sumUp (int [] array){
+    public static Integer sumUp (Integer[] array){
 
-        int [] arrayCopy = Arrays.copyOf(array, array.length);
+        Integer [] arrayCopy = Arrays.copyOf(array, array.length);
 
         if (arrayCopy.length == 0){
             return 0;
